@@ -52,13 +52,16 @@ body {
 
 .component {
   position: absolute;
-  top: 50%;
+  top: 50svh;
+  top: 50vh;
+  left: 50svw;
+  left: 50vw;
   width: 41rem;
   min-width: 41rem;
   height: 28.5rem;
   min-height: 28.5rem;
   background-color: var(--white);
-  transform: translate(50%, 50%);
+  transform: translate(-50%, -50%);
   border-radius: 1.75rem;
   display: flex;
 }
