@@ -194,3 +194,64 @@ body {
   content: ' / 100';
   opacity: 0.5;
 }
+
+@media (max-width: 375px) {
+  .component {
+    width: 100%;
+    position: unset;
+    top: unset;
+    left: unset;
+    width: 100%;
+    /* For potential JS click action */
+    /* transform: translate(calc(-25% - 3rem), -50%); */
+    flex-direction: column;
+    transform: unset;
+    height: unset;
+    min-height: unset;
+    border-radius: 0rem;
+  }
+  h1 {
+    font-size: 1.33rem;
+    line-height: 1.72rem;
+    margin-bottom: 0.5rem;
+  }
+  h2 {
+    font-size: 3.11rem;
+  }
+  h3 {
+    font-size: 1rem;
+    line-height: 1.33rem;
+    margin-bottom: 1.33rem;
+  }
+  p {
+    font-size: 0.88rem;
+  }
+  p.bold {
+    line-height: 1.17rem;
+  }
+  .slide {
+    width: 100%;
+    padding-top: 1.33rem;
+  }
+  .score {
+    text-align: center;
+    color: var(--white);
+    width: unset;
+    padding-bottom: 2.22rem;
+    border-bottom-left-radius: 1.75rem;
+    border-bottom-right-radius: 1.75rem;
+  }
+  .circle {
+    padding: 1.33rem;
+    max-width: 7.78rem;
+    min-width: 7.78rem;
+    max-height: 7.78rem;
+    min-height: 7.78rem;
+    margin-bottom: 1.33rem;
+  }
+  .summary {
+    width: unset;
+    transform: unset;
+    padding-inline: 3rem;
+  }
+}
