@@ -1,9 +1,14 @@
 :root {
   /* Primary colors */
+  --alpha: 0.06;
   --light-red: hsl(0, 100%, 67%);
+  --light-red-alpha: hsla(0, 100%, 67%, var(--alpha));
   --orangey-yellow: hsl(39, 100%, 56%);
+  --orangey-yellow-alpha: hsla(39, 100%, 56%, var(--alpha));
   --green-teal: hsl(166, 100%, 37%);
+  --green-teal-alpha: hsla(166, 100%, 37%, var(--alpha));
   --cobalt-blue: hsl(234, 85%, 45%);
+  --cobalt-blue-alpha: hsla(234, 85%, 45%, var(--alpha));
   /* Neutral Colors */
   --white: hsl(0, 0%, 100%);
   --pale-blue: hsl(221, 100%, 96%);
@@ -60,6 +65,18 @@ p {
   color: var(--dark-gray-blue);
 }
 
+.white {
+  color: var(--white);
+}
+
+.button {
+  padding-block: 0.89rem;
+  background-color: var(--dark-gray-blue);
+  border-radius: 1.56rem;
+  text-align: center;
+  cursor: pointer;
+}
+
 body {
   background-color: var(--pale-blue);
   position: relative;
@@ -71,25 +88,27 @@ body {
   top: 50vh;
   left: 50svw;
   left: 50vw;
+  height: 28.5rem;
   min-height: 28.5rem;
-  background-color: var(--white);
   transform: translate(-50%, -50%);
+  /* For potential JS click action */
+  /* transform: translate(calc(-25% - 3rem), -50%); */
   border-radius: 1.75rem;
   display: flex;
 }
 
 .slide {
-  width: 20.5rem;
-  min-width: 20.5rem;
   padding-top: 2.11rem;
+  border-radius: inherit;
+  height: 100%;
 }
 
 .score {
   background-image: var(--blue-bg-gradient);
-  border-radius: inherit;
   padding-inline: 3rem;
   text-align: center;
   color: var(--white);
+  width: 20.5rem;
 }
 
 .circle {
@@ -103,8 +122,23 @@ body {
 }
 
 .summary {
-  padding-inline: 2.22rem;
+  background-color: var(--white);
+  padding-left: 5rem;
+  padding-right: 2.22rem;
+  width: calc(22.75rem);
+  z-index: -1;
+  transform: translateX(-3rem);
 }
+
+.summary > h3 {
+  margin-bottom: 1.56rem;
+}
+
+/* For a potential JS click action */
+/* .summary:hover {
+  transition: all 1s ease-in-out;
+  transform: translateX(-3rem);
+} */
 
 .results-scores {
   display: flex;
@@ -112,12 +146,39 @@ body {
   gap: 1rem;
 }
 
+.results-scores > div:nth-child(1) {
+  color: var(--light-red);
+  background-color: var(--light-red-alpha);
+}
+
+.results-scores > div:nth-child(2) {
+  color: var(--orangey-yellow);
+  background-color: var(--orangey-yellow-alpha);
+}
+
+.results-scores > div:nth-child(3) {
+  color: var(--green-teal);
+  background-color: var(--green-teal-alpha);
+}
+
+.results-scores > div:nth-child(4) {
+  color: var(--cobalt-blue);
+  background-color: var(--cobalt-blue-alpha);
+}
+
+.results-scores > div:last-child {
+  margin-top: 1.25rem;
+}
+
 .score-category {
   display: flex;
   gap: 0.67rem;
   padding: 0.89rem 1rem 1rem;
-  border: 1px solid black;
   border-radius: 0.5rem;
+}
+
+.score-category > p.category {
+  color: inherit;
 }
 
 .icon {
