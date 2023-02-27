@@ -20,3 +20,6 @@ package-lock.json
 /assets
 /design
 /node_modules
+test.html
+test.css
+test.js

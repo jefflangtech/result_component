@@ -20,6 +20,10 @@
   /* Typography */
   font-family: 'Hanken Grotesk', sans-serif;
   font-size: 18px;
+  /* Slide control variables */
+  --slide-width: 20.5rem;
+  --overlap: 1.75rem;
+  --translate-X: -0.95;
 }
 
 * {
@@ -79,36 +83,38 @@ p {
 
 body {
   background-color: var(--pale-blue);
-  position: relative;
+  /* position: relative; */
+  height: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .component {
-  position: absolute;
-  top: 50svh;
-  top: 50vh;
-  left: 50svw;
-  left: 50vw;
+  position: relative;
   height: 28.5rem;
-  min-height: 28.5rem;
-  transform: translate(-50%, -50%);
-  /* For potential JS click action */
-  /* transform: translate(calc(-25% - 3rem), -50%); */
-  border-radius: 1.75rem;
-  display: flex;
+  /* Dynamically sets component width based on top slide, the overlap
+  amount, and the visible portion of the bottom slide */
+  width: calc(2 * var(--slide-width) + var(--overlap) + calc(var(--slide-width) * var(--translate-X)));
+  transition: all 1s ease-in-out;
 }
 
 .slide {
+  display: inline-block;
   padding-top: 2.11rem;
-  border-radius: inherit;
+  border-radius: 1.75rem;
   height: 100%;
 }
 
 .score {
+  position: relative;
   background-image: var(--blue-bg-gradient);
   padding-inline: 3rem;
   text-align: center;
   color: var(--white);
-  width: 20.5rem;
+  width: var(--slide-width);
+  z-index: 50;
 }
 
 .circle {
@@ -122,12 +128,15 @@ body {
 }
 
 .summary {
+  position: absolute;
   background-color: var(--white);
   padding-left: 5rem;
   padding-right: 2.22rem;
-  width: calc(22.75rem);
-  z-index: -1;
-  transform: translateX(-3rem);
+  width: calc(var(--slide-width) + var(--overlap));
+  z-index: 20;
+  transform: translateX(calc(var(--slide-width) * var(--translate-X)));
+  transition: all 1s ease-in-out;
+  cursor: pointer;
 }
 
 .summary > h3 {
