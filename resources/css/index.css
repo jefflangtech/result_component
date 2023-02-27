@@ -9,6 +9,7 @@
   --green-teal-alpha: hsla(166, 100%, 37%, var(--alpha));
   --cobalt-blue: hsl(234, 85%, 45%);
   --cobalt-blue-alpha: hsla(234, 85%, 45%, var(--alpha));
+  --light-purple: hsl(252, 100%, 67%);
   /* Neutral Colors */
   --white: hsl(0, 0%, 100%);
   --pale-blue: hsl(221, 100%, 96%);
@@ -143,7 +144,7 @@ body {
   right: 0.75rem;
   height: 1.5rem;
   width: 1.5rem;
-  color: var(--dark-gray-blue);
+  color: var(--light-purple);
   cursor: pointer;
 }
 
@@ -219,17 +220,26 @@ body {
 }
 
 @media (max-width: 375px) {
+  body {
+    background-color: var(--whites);
+    height: 100%;
+    height: 100vh;
+    display: unset;
+  }
   .component {
-    width: 100%;
-    position: unset;
-    top: unset;
-    left: unset;
-    width: 100%;
+    position: relative;
+    display: flex;
     flex-direction: column;
-    transform: unset;
+    justify-content: space-evenly;
     height: unset;
-    min-height: unset;
-    border-radius: 0rem;
+    width: 100%;
+    transition: all 1s ease-in-out;
+  }
+  .slide {
+    display: block;
+    padding-top: 2.11rem;
+    border-radius: 1.75rem;
+    height: unset;
   }
   h1 {
     font-size: 1.33rem;
@@ -246,19 +256,18 @@ body {
   }
   p {
     font-size: 0.88rem;
+    line-height: 1.17rem;
   }
   p.bold {
     line-height: 1.17rem;
   }
-  .slide {
-    width: 100%;
-    padding-top: 1.33rem;
-  }
   .score {
     text-align: center;
     color: var(--white);
-    width: unset;
+    width: 100%;
+    padding-top: 1.33rem;
     padding-bottom: 2.22rem;
+    border-radius: 0;
     border-bottom-left-radius: 1.75rem;
     border-bottom-right-radius: 1.75rem;
   }
@@ -271,9 +280,19 @@ body {
     margin-bottom: 1.33rem;
   }
   .summary {
-    width: unset;
+    position: relative;
+    width: 100%;
+    padding-top: 1.75rem;
+    padding-bottom: 3rem;
     transform: unset;
     padding-inline: 3rem;
+  }
+  .results-scores {
+    opacity: 1;
+  }
+  #toggle-open-button,
+  #toggle-close-button {
+    display: none;
   }
 }
 
