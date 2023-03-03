@@ -20,7 +20,7 @@ const toggleSlide = function() {
   } else if(openState) {
     document.documentElement.style.setProperty('--translate-X', '-0.95');
     openState = false;
-    setTimeout(toggleButtons, 1000);
+    setTimeout(toggleButtons, 550);
     resultsScores.style.opacity = "0";
   }
 }
