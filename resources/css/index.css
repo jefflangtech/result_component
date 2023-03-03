@@ -219,11 +219,7 @@ body {
   opacity: 0.5;
 }
 
-/* @media (min-width: 375px) and (max-width: 720px) { */
-@media (max-width: 720px) {
-  h2 {
-    font-size: 3.11rem;
-  }
+@media (min-width: 375px) and (max-width: 720px) {
   h3 {
     margin-bottom: 1.5rem;
   }
@@ -237,18 +233,11 @@ body {
     padding-bottom: 3rem;
   }
   .component {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: unset;
     width: 30rem;
     transition: unset;
     margin: auto;
   }
   .score {
-    width: 100%;
-    padding-top: 1.33rem;
     padding-inline: 1.66rem;
   }
   .summary {
@@ -268,9 +257,27 @@ body {
   .results-scores {
     opacity: 1;
     gap: 0.5rem;
+    transition: unset;
   }
   .results-scores > div:last-child {
     margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .component {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: unset;
+  }
+  h2 {
+    font-size: 3.11rem;
+  }
+  .score {
+    width: 100%;
+    padding-top: 1.33rem;
   }
   #toggle-open-button,
   #toggle-close-button {
@@ -285,15 +292,10 @@ body {
     height: 100vh;
     display: unset;
   }
-  /* .component {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: unset;
+  .component {
     width: 100%;
     transition: all 1s ease-in-out;
-  } */
+  }
   .slide {
     display: block;
     padding-top: 2.11rem;
@@ -304,9 +306,6 @@ body {
     font-size: 1.33rem;
     line-height: 1.72rem;
     margin-bottom: 0.5rem;
-  }
-  h2 {
-    font-size: 3.11rem;
   }
   h3 {
     font-size: 1rem;
@@ -323,8 +322,6 @@ body {
   .score {
     text-align: center;
     color: var(--white);
-    width: 100%;
-    padding-top: 1.33rem;
     padding-bottom: 2.22rem;
     border-radius: 0;
     border-bottom-left-radius: 1.75rem;
@@ -346,17 +343,13 @@ body {
     transform: unset;
     padding-inline: 1.66rem;
   }
-  /* .results-scores {
+  .results-scores {
     opacity: 1;
     gap: 0.87rem;
-  } */
+  }
   .results-scores > div:last-child {
     margin-top: 0.75rem;
   }
-  /* #toggle-open-button,
-  #toggle-close-button {
-    display: none;
-  } */
 }
 
 .hidden {
