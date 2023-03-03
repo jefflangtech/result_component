@@ -219,6 +219,35 @@ body {
   opacity: 0.5;
 }
 
+@media (min-width: 375px) and (max-width: 720px) {
+  .tablet-view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .component {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: unset;
+    width: 30rem;
+    transition: all 1s ease-in-out;
+    margin: auto;
+  }
+  .score {
+    width: 100%;
+  }
+  .summary {
+    position: relative;
+    width: 100%;
+    padding-top: 1.33rem;
+    padding-bottom: 0rem;
+    transform: unset;
+    padding-inline: 1.66rem;
+  }
+}
+
 @media (max-width: 375px) {
   body {
     background-color: var(--whites);
