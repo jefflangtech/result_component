@@ -282,13 +282,17 @@ body {
   .summary {
     position: relative;
     width: 100%;
-    padding-top: 1.75rem;
-    padding-bottom: 3rem;
+    padding-top: 1.33rem;
+    padding-bottom: 0rem;
     transform: unset;
-    padding-inline: 3rem;
+    padding-inline: 1.66rem;
   }
   .results-scores {
     opacity: 1;
+    gap: 0.87rem;
+  }
+  .results-scores > div:last-child {
+    margin-top: 0.75rem;
   }
   #toggle-open-button,
   #toggle-close-button {
