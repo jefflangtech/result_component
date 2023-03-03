@@ -97,7 +97,8 @@ body {
   /* Dynamically sets component width based on top slide, the overlap
   amount, and the visible portion of the bottom slide */
   width: calc(2 * var(--slide-width) + var(--overlap) + calc(var(--slide-width) * var(--translate-X)));
-  transition: all 1s ease-in-out;
+  transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.55s;
 }
 
 .slide {
@@ -135,7 +136,8 @@ body {
   width: calc(var(--slide-width) + var(--overlap));
   z-index: 20;
   transform: translateX(calc(var(--slide-width) * var(--translate-X)));
-  transition: all 1s ease-in-out;
+  transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.55s;
 }
 
 #toggle-open-button {
@@ -167,7 +169,8 @@ body {
   flex-direction: column;
   gap: 1rem;
   opacity: 0;
-  transition: all 0.75s ease-in-out;
+  transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: all 0.55s;
 }
 
 .results-scores > div:nth-child(1) {
@@ -219,7 +222,7 @@ body {
   opacity: 0.5;
 }
 
-@media (min-width: 375px) and (max-width: 720px) {
+@media (min-width: 475px) and (max-width: 720px) {
   h3 {
     margin-bottom: 1.5rem;
   }
@@ -285,22 +288,24 @@ body {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 475px) {
   body {
     background-color: var(--whites);
     height: 100%;
     height: 100vh;
     display: unset;
+    min-width: 375px;
   }
   .component {
     width: 100%;
-    transition: all 1s ease-in-out;
+    transition: unset;
   }
   .slide {
     display: block;
     padding-top: 2.11rem;
     border-radius: 1.75rem;
     height: unset;
+    min-width: 375px;
   }
   h1 {
     font-size: 1.33rem;
