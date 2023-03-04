@@ -1,3 +1,10 @@
+/* Organization:
+ - Basic document level rules
+ - Headings and similar rules
+ - Layout level rules 
+ - Media queries
+  */
+
 :root {
   /* Primary colors */
   --alpha: 0.06;
@@ -31,7 +38,7 @@
   box-sizing: border-box;
 }
 
-/* Headings */
+/* Headings and similar rules */
 h1 {
   font-size: 1.78rem;
   line-height: 2.33rem;
@@ -82,6 +89,7 @@ p {
   cursor: pointer;
 }
 
+/* Layout level rules */ 
 body {
   background-color: var(--pale-blue);
   height: 100%;
@@ -95,7 +103,7 @@ body {
   position: relative;
   height: 28.5rem;
   /* Dynamically sets component width based on top slide, the overlap
-  amount, and the visible portion of the bottom slide */
+  amount, and the visible portion of the bottom slide. This keeps the component in the center of screen even while the slides transition */
   width: calc(2 * var(--slide-width) + var(--overlap) + calc(var(--slide-width) * var(--translate-X)));
   transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: all 0.55s;
@@ -133,13 +141,16 @@ body {
   background-color: var(--white);
   padding-left: 5rem;
   padding-right: 2.22rem;
+  /* Adjust slide width by the amount to generate a seamless overlap */
   width: calc(var(--slide-width) + var(--overlap));
   z-index: 20;
+  /* Keep the summary slide tucked until opened by the user */
   transform: translateX(calc(var(--slide-width) * var(--translate-X)));
   transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   transition: all 0.55s;
 }
 
+/* For interactivity with the component */
 #toggle-open-button {
   position: absolute;
   top: 1rem;
@@ -173,6 +184,9 @@ body {
   transition: all 0.55s;
 }
 
+/* This could be ported to JS so it's not as much a mess
+or maybe just set up so it's clearer what elements are linked
+to what styles and content */
 .results-scores > div:nth-child(1) {
   color: var(--light-red);
   background-color: var(--light-red-alpha);
@@ -222,7 +236,9 @@ body {
   opacity: 0.5;
 }
 
-@media (min-width: 475px) and (max-width: 720px) {
+/* Media queries */
+/* Tablet or medium-sized screens */
+@media ((min-width: 475px) and (max-width: 720px)) {
   h3 {
     margin-bottom: 1.5rem;
   }
@@ -267,6 +283,7 @@ body {
   }
 }
 
+/* Common smaller screen rules */
 @media (max-width: 720px) {
   .component {
     position: relative;
@@ -288,6 +305,7 @@ body {
   }
 }
 
+/* Mobile rules */
 @media (max-width: 475px) {
   body {
     background-color: var(--whites);
