@@ -75,7 +75,7 @@ And the component rules:
 }
 ```
 
-The JavaScript comes in with the functionality, changing the translateX() value:
+The JavaScript comes in with the functionality, changing the translateX() parameter:
 
 ```js
 const toggleSlide = function() {
